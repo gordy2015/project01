@@ -1,0 +1,10 @@
+ 76982 0.1 13.1       /usr/local/mysql/bin/mysqld --basedir=/usr/local/mysql/ --datadir=/newdata/mysql --plugin-dir=/usr/local/mysql//lib/plugin --user=mysql --log-error=/newdata/mysql/master.rgkj.com.err --pid-file=/newdata/mysql/mysqld.pid --socket=/usr/local/mysql/mysql.sock
+ 86971 0.1 12.9       /application/java/bin/java -Djava.util.logging.config.file=/application/tomcat/conf/logging.properties -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager -server -Xms256m -Xmx256m -Xss1024K -Djava.endorsed.dirs=/application/tomcat/endorsed -classpath /application/tomcat/bin/bootstrap.jar:/application/tomcat/bin/tomcat-juli.jar -Dcatalina.base=/application/tomcat -Dcatalina.home=/application/tomcat -Djava.io.tmpdir=/application/tomcat/temp org.apache.catalina.startup.Bootstrap start
+ 1939 0.3 2.5       /usr/bin/python /usr/bin/salt-master
+ 78238 0.0 2.2       /usr/bin/dockerd-current --add-runtime docker-runc=/usr/libexec/docker/docker-runc-current --default-runtime=docker-runc --exec-opt native.cgroupdriver=systemd --userland-proxy-path=/usr/libexec/docker/docker-proxy-current --selinux-enabled --log-driver=journald --signature-verification=false
+ 2177 0.0 1.7       /usr/bin/python /usr/bin/salt-master
+ 2162 0.0 1.7       /usr/bin/python /usr/bin/salt-master
+ 2159 0.0 1.7       /usr/bin/python /usr/bin/salt-master
+ 2158 0.0 1.7       /usr/bin/python /usr/bin/salt-master
+ 2156 0.0 1.7       /usr/bin/python /usr/bin/salt-master
+ 2148 1.8 1.4       /usr/bin/python /usr/bin/salt-master
