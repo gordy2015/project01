@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <style>
         #msg{
-            width:800px; height:500px; overflow:auto; border:2px solid #000000;
+            width:500px; height:500px; overflow:auto; border:2px solid #000000;
             position: fixed; bottom:1;
     }
     </style>
@@ -35,7 +35,7 @@
                     $('#msg').prepend("<p>你的浏览器不支持websocket</p>");
                 }
             }
-            ws = new WebSocket('ws://192.168.2.11:8000/websocket/');
+            ws = new WebSocket('ws://127.0.0.1:8000/websocket/');
             ws.onopen = function(evt) {
                 $('#msg').prepend('<li style="color: red">'+ getFormatDate() + ' websocket连接成功</li>');
             };
@@ -68,7 +68,7 @@
                 console.log('已有一个ws在运行');
             }else {
                 console.log(ws.readyState);
-                ws = new WebSocket('ws://192.168.2.11:8000/websocket/');
+                ws = new WebSocket('ws://127.0.0.1:8000/websocket/');
                 ws.onopen = function(evt) {
                     $('#msg').prepend('<li style="color: red">'+ getFormatDate() + ' websocket连接成功</li>');
                 };
@@ -97,8 +97,8 @@
                 console.log('已关闭实时查看日志');
                 $('#msg').prepend('<li style="color: red">' + getFormatDate() + ' 已断开websocket连接</li>');
             };
-            ws2 = new WebSocket('ws://192.168.2.11:8000/websocket2/');
-
+            ws2 = new WebSocket('ws://127.0.0.1:8000/websocket2/');
+            console.log(ws2);
             ws2.onopen = function(evt) {
                 $("#msg").html('');
                 $('#msg').prepend('<li style="color: red">'+ getFormatDate() + ' 查看历史日志</li>');

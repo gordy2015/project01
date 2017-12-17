@@ -34,16 +34,12 @@ users2 = set()   # 连接进来的websocket客户端集合
 def chat2(ws2):
     users2.add(ws2)
     print('add2:%s'%users2)
-    while True:
-        msg = ws2.receive()  # 接客户端的消息
-        if msg:
-            print(msg)
-            for u in users2:
-                u.send(msg)  # 发送信息给所有的客户端
-        else:
-            print('Not any msg')
-            break
-    # 如果有客户端断开连接，则踢出users集合
+    if users2:
+        with open('test.log','r') as f:
+            for line in f.readlines():
+                msg = line
+                for u in users2:
+                    u.send(msg)
     users2.remove(ws2)
     print('remove2:%s'%users2)
 

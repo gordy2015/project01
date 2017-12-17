@@ -9,12 +9,12 @@ r_user = "root"
 r_ip = "127.0.0.1"
 r_port = 22
 # r_log = "/application/tomcat/logs/catalina.out"   # 远程服务器要被采集的日志路径
-r_log = "/tmp/test.log"   # 远程服务器要被采集的日志路径
+r_log = "test.log"   # 远程服务器要被采集的日志路径
 # websocket服务端地址
-ws_server = "ws://192.168.2.11:8000/websocket2/"
+ws_server = "ws://127.0.0.1:8000/websocket2/"
 # 执行的shell命令（使用ssh远程执行）
 #cmd = "/usr/bin/ssh -p {port} {user}@{ip} /usr/bin/tailf {log_path}".format(user=r_user,ip=r_ip,port=r_port,log_path=r_log)
-cmd = "/usr/bin/tailf {log_path}".format(log_path=r_log)
+cmd = "/bin/tailf {log_path}".format(log_path=r_log)
 # cmd = "python /mnt/tailftom/tc_v7.py log /application/tomcat/logs/catalina.out"
 def tailfLog():
     """获取远程服务器实时日志，并发送到websocket服务端"""
@@ -26,6 +26,7 @@ def tailfLog():
         while True:
             line = popen.stdout.readline().strip()  #获取内容
             if line:
+                print(line)
                 ws.send(line)   #把内容发送到websocket服务端
         #        print time.time()
 if __name__ == '__main__':
