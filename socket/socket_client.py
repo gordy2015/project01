@@ -30,7 +30,8 @@ c = socket.socket()
 c.connect(('localhost',9900))
 while True:
     data = input('>>: ')
-    if len(data) == 0:continue
+    if len(data) == 0:
+        continue
     c.sendall(data.encode())
     rec = c.recv(1024)
     print(rec.decode())
